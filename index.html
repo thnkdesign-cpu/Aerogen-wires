@@ -3,432 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aerogen Pharma — Advancing Aerosol Therapies</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Aerogen Wireframes</title>
 <style>
   :root {
-    --blue-900: #0B1F3A;
-    --blue-700: #1F3A52;
-    --blue-500: #3D5A7A;
-    --blue-300: #8FA9C2;
-    --blue-100: #E8EFF5;
-    --gray-900: #1a1a1a;
-    --gray-700: #4a4a4a;
-    --gray-500: #767676;
-    --white: #fff;
-
-    --display: 'Space Grotesk', sans-serif;
-    --sans: 'Inter', sans-serif;
-    --mono: 'IBM Plex Mono', monospace;
-
-    /* Spacing */
-    --space-1: 4px;
-    --space-2: 8px;
-    --space-3: 12px;
-    --space-4: 16px;
-    --space-5: 24px;
-    --space-6: 32px;
-    --space-7: 48px;
-    --space-8: 64px;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e4e4e4;
+    --bg: #fafafa;
+    --card: #ffffff;
   }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: var(--sans);
-    background: var(--white);
-    color: var(--gray-900);
-    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    padding: 64px 24px;
   }
-
-  sup {
-    font-size: 0.75em;
-    vertical-align: super;
+  .wrap { max-width: 720px; margin: 0 auto; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 28px; margin-bottom: 40px; }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 12px;
   }
-
-  /* Navigation */
-  nav {
+  h1 { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin-top: 10px; font-size: 15px; }
+  ul { list-style: none; }
+  li { margin-bottom: 14px; }
+  a.card {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-5) 5vw;
-    background: var(--white);
-    border-bottom: 1px solid var(--blue-100);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .nav-logo {
-    font-family: var(--display);
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--gray-900);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: var(--space-6);
-    list-style: none;
-    font-size: 13px;
-  }
-
-  .nav-links a {
-    color: var(--gray-700);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 24px;
     text-decoration: none;
+    color: var(--ink);
+    transition: border-color 0.15s ease, transform 0.15s ease;
   }
-
-  .nav-cta {
-    padding: var(--space-2) var(--space-4);
-    border: 1px solid var(--gray-500);
-    background: transparent;
-    color: var(--gray-900);
-    font-size: 13px;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  /* Hero Section */
-  .hero {
-    padding: var(--space-8) 5vw;
-    background: var(--white);
-    border-bottom: 1px solid var(--blue-100);
-  }
-
-  .hero-grid {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-8);
-    align-items: stretch;
-  }
-
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .hero h1 {
-    font-family: var(--display);
-    font-size: clamp(36px, 5vw, 56px);
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    color: var(--gray-900);
-    margin-bottom: var(--space-5);
-  }
-
-  .hero p {
-    font-size: 15px;
-    color: var(--gray-700);
-    line-height: 1.7;
-    margin-bottom: var(--space-4);
-  }
-
-  .hero-visual {
-    min-height: 400px;
-    background: var(--blue-100);
-    border: 1px solid var(--blue-300);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--blue-500);
-    font-size: 13px;
-    font-family: var(--mono);
-  }
-
-  /* Content Sections */
-  .content-section {
-    padding: var(--space-8) 5vw;
-    background: var(--white);
-    border-bottom: 1px solid var(--blue-100);
-  }
-
-  .content-section.color-blocked {
-    background: var(--blue-100);
-  }
-
-  .section-container {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gray-700);
-    margin-bottom: var(--space-3);
-    font-weight: 500;
-  }
-
-  .content-section h2 {
-    font-family: var(--display);
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--gray-900);
-    margin-bottom: var(--space-5);
-    line-height: 1.2;
-  }
-
-  .content-section p {
-    font-size: 15px;
-    color: var(--gray-700);
-    line-height: 1.7;
-    margin-bottom: var(--space-4);
-  }
-
-  .content-section p:last-of-type {
-    margin-bottom: 0;
-  }
-
-  /* Buttons/Links */
-  .section-link {
-    display: inline-block;
-    margin-top: var(--space-5);
-    padding: var(--space-3) var(--space-6);
-    background: var(--blue-500);
-    color: var(--white);
-    text-decoration: none;
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: 14px;
-    border: 1px solid var(--blue-500);
-    cursor: pointer;
-    transition: all 0.2s;
-    white-space: nowrap;
-  }
-
-  .section-link:hover {
-    background: var(--blue-700);
-    border-color: var(--blue-700);
-  }
-
-  /* 50/50 Grid for Content Sections */
-  .section-grid {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-8);
-    align-items: stretch;
-  }
-
-  .section-grid.reverse {
-    direction: rtl;
-  }
-
-  .section-grid.reverse > * {
-    direction: ltr;
-  }
-
-  .grid-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  /* Image Placeholders in Content Sections */
-  .section-visual {
-    min-height: 400px;
-    background: var(--blue-100);
-    border: 1px solid var(--blue-300);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--blue-500);
-    font-size: 13px;
-    font-family: var(--mono);
-  }
-
-  /* References Section */
-  .references-section {
-    padding: var(--space-8) 5vw;
-    background: var(--white);
-  }
-
-  .references-container {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .references-section h2 {
-    font-family: var(--display);
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--gray-900);
-    margin-bottom: var(--space-5);
-  }
-
-  .references {
-    margin-top: var(--space-5);
-  }
-
-  .reference-item {
-    font-size: 12px;
-    color: var(--gray-700);
-    line-height: 1.6;
-    margin-bottom: var(--space-3);
-    padding-left: var(--space-4);
-    text-indent: calc(var(--space-4) * -1);
-  }
-
-  .reference-item a {
-    color: var(--blue-500);
-    text-decoration: none;
-  }
-
-  .reference-item a:hover {
-    text-decoration: underline;
-  }
-
-  @media (max-width: 900px) {
-    .hero-grid {
-      grid-template-columns: 1fr;
-    }
-    .hero-visual {
-      display: none;
-    }
-    .section-grid {
-      grid-template-columns: 1fr;
-    }
-    .section-grid.reverse {
-      direction: ltr;
-    }
-    .section-visual {
-      display: none;
-    }
-    .nav-links {
-      display: none;
-    }
-  }
+  a.card:hover { border-color: var(--ink); transform: translateY(-1px); }
+  .label { font-size: 17px; font-weight: 600; }
+  .file { display: block; font-size: 13px; color: var(--muted); margin-top: 4px; font-weight: 400; }
+  .arrow { font-size: 20px; color: var(--muted); }
+  a.card:hover .arrow { color: var(--ink); }
+  footer { margin-top: 48px; font-size: 13px; color: var(--muted); text-align: center; }
 </style>
 </head>
 <body>
-
-<!-- Navigation -->
-<nav>
-  <div class="nav-logo">AerogenPharma</div>
-  <ul class="nav-links">
-    <li><a href="#">Our Company</a></li>
-    <li><a href="#">Our Technology</a></li>
-    <li><a href="#">Pipeline</a></li>
-    <li><a href="#">Partnerships</a></li>
-    <li><a href="#">Understanding RDS</a></li>
-    <li><a href="#">Newsroom</a></li>
-    <li><a href="#">Culture & Careers</a></li>
-  </ul>
-  <a href="#" class="nav-cta">Contact Us</a>
-</nav>
-
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-grid">
-    <div class="hero-content">
-      <h1>Advancing Innovative Aerosol Therapies for Preterm Infants with Life-Threatening Respiratory Disease<sup>1,2</sup></h1>
-      <p>At Aerogen Pharma, we are a purpose-driven company developing novel aerosol therapies intended to address serious respiratory disease in preterm infants and other critically ill patients with life-threatening respiratory diseases worldwide.<sup>1-4</sup></p>
-    </div>
-    <div class="hero-visual">[Image placeholder]</div>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">Aerogen Pharma</div>
+      <h1>Wireframes</h1>
+      <p class="sub">Select a page to view.</p>
+    </header>
+    <ul>
+      <li>
+        <a class="card" href="aerogen-homepage-wireframe.html">
+          <span class="label">Homepage<span class="file">aerogen-homepage-wireframe.html</span></span>
+          <span class="arrow">&rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="aerogen-technology-overview-test-wireframe.html">
+          <span class="label">Technology Overview<span class="file">aerogen-technology-overview-test-wireframe.html</span></span>
+          <span class="arrow">&rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="aerogen-rds-overview-wireframe.html">
+          <span class="label">RDS Overview<span class="file">aerogen-rds-overview-wireframe.html</span></span>
+          <span class="arrow">&rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="aerogen-treatments-therapies-wireframe.html">
+          <span class="label">Treatments &amp; Therapies<span class="file">aerogen-treatments-therapies-wireframe.html</span></span>
+          <span class="arrow">&rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="aerogen-contact-us-wireframe.html">
+          <span class="label">Contact Us<span class="file">aerogen-contact-us-wireframe.html</span></span>
+          <span class="arrow">&rarr;</span>
+        </a>
+      </li>
+    </ul>
+    <footer>Aerogen wireframe index</footer>
   </div>
-</section>
-
-<!-- Who We Are Section -->
-<section class="content-section color-blocked">
-  <div class="section-grid">
-    <div class="grid-content">
-      <div class="section-label">Our Company</div>
-      <h2>Who We Are</h2>
-      <p>Aerogen Pharma is a clinical-stage specialty pharmaceutical company focused on developing proprietary inhaled therapies for preterm infants with severe respiratory disease who require oxygen and ventilatory support in acute and critical care settings.<sup>1,2,4</sup></p>
-      <a href="#" class="section-link">Learn More</a>
-    </div>
-    <div class="section-visual">[Image placeholder]</div>
-  </div>
-</section>
-
-<!-- Our Heritage Section -->
-<section class="content-section">
-  <div class="section-grid reverse">
-    <div class="section-visual">[Image placeholder]</div>
-    <div class="grid-content">
-      <div class="section-label">Heritage & Leadership</div>
-      <h2>Our Heritage</h2>
-      <p>Headquartered in Galway, Ireland, with operations in the United States, Aerogen Pharma is the pharmaceutical development division of Aerogen. Together, we are leveraging experience in aerosol science, respiratory care, and clinical innovation to address significant unmet needs in neonatal medicine.<sup>2,3</sup></p>
-      <a href="#" class="section-link">Explore Our Story</a>
-    </div>
-  </div>
-</section>
-
-<!-- Our Mission Section -->
-<section class="content-section color-blocked">
-  <div class="section-grid">
-    <div class="grid-content">
-      <div class="section-label">Purpose & Vision</div>
-      <h2>Our Mission</h2>
-      <p>At Aerogen Pharma, our mission is simple: to advance innovative inhaled therapies that improve the lives of preterm infants and the clinicians who care for them.<sup>1-3</sup></p>
-    </div>
-    <div class="section-visual">[Image placeholder]</div>
-  </div>
-</section>
-
-<!-- Our Approach Section -->
-<section class="content-section">
-  <div class="section-grid reverse">
-    <div class="section-visual">[Image placeholder]</div>
-    <div class="grid-content">
-      <div class="section-label">Strategy</div>
-      <h2>Our Approach</h2>
-      <p>Our approach combines well-established therapeutic molecules with advanced aerosol delivery technology designed to deliver medication directly to the lungs of critically ill preterm infants. By targeting pulmonary delivery at the site of disease, we aim to address limitations of invasive surfactant delivery and support less invasive respiratory care.<sup>3,5,9</sup></p>
-    </div>
-  </div>
-</section>
-
-<!-- Our Platform Section -->
-<section class="content-section color-blocked">
-  <div class="section-grid">
-    <div class="grid-content">
-      <div class="section-label">Technology</div>
-      <h2>Our Platform</h2>
-      <p>Through our integrated drug-device platform, we are working to advance respiratory therapy delivery with a focus on dosing efficiency, treatment consistency, patient comfort, and compatibility across invasive and non-invasive respiratory support systems.<sup>4-9</sup></p>
-      <a href="#" class="section-link">Discover Our Technology</a>
-    </div>
-    <div class="section-visual">[Image placeholder]</div>
-  </div>
-</section>
-
-<!-- Strong Proof Section -->
-<section class="content-section">
-  <div class="section-grid reverse">
-    <div class="section-visual">[Image placeholder]</div>
-    <div class="grid-content">
-      <div class="section-label">Clinical Evidence</div>
-      <h2>Strong Proof</h2>
-      <p>Small airways, low tidal volumes, rapid respiratory rates, and preferential nasal breathing make aerosol delivery especially challenging in preterm infants. Published studies report very low lung deposition for some less-optimized neonatal aerosol configurations (1 - 10%), while optimized mesh, breath-actuated, and nasal-interface approaches have been developed to increase lung delivery (30 - 50%) in preclinical, bench, and early clinical studies.<sup>3,5-8</sup></p>
-      <a href="#" class="section-link">Review Our Research</a>
-    </div>
-  </div>
-</section>
-
-<!-- References Section -->
-<section class="references-section">
-  <div class="references-container">
-    <h2>References</h2>
-    <div class="references">
-      <div class="reference-item">1. Sweet DG, Carnielli VP, Greisen G, et al. <a href="https://karger.com/neo/article/doi/10.1159/000551062/945992/European-Consensus-Guidelines-on-the-Management-of">European consensus guidelines on the management of respiratory distress syndrome: 2025</a>. Neonatology. 2026. Published online March 9, 2026. doi:<a href="https://doi.org/10.1159/000551062">10.1159/000551062</a></div>
-      <div class="reference-item">2. Ekhaguere OA, Okonkwo IR, Batra M, Hedstrom AB. <a href="https://www.frontiersin.org/journals/pediatrics/articles/10.3389/fped.2022.961509/full">Respiratory distress syndrome management in resource limited settings: current evidence and opportunities in 2022</a>. Front Pediatr. 2022;10:961509. doi:<a href="https://doi.org/10.3389/fped.2022.961509">10.3389/fped.2022.961509</a></div>
-      <div class="reference-item">3. Rao S, Edmond K, Bahl R. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10140689/">Target product profile: aerosolized surfactant for neonatal respiratory distress</a>. Bull World Health Organ. 2023;101(5):341-345. doi:<a href="https://doi.org/10.2471/BLT.23.289727">10.2471/BLT.23.289727</a></div>
-      <div class="reference-item">4. Li J, Liu K, Lyu S, et al. <a href="https://link.springer.com/article/10.1186/s13613-023-01147-4">Aerosol therapy in adult critically ill patients: a consensus statement regarding aerosol administration strategies during various modes of respiratory support</a>. Ann Intensive Care. 2023;13(1):63. doi:<a href="https://doi.org/10.1186/s13613-023-01147-4">10.1186/s13613-023-01147-4</a></div>
-      <div class="reference-item">5. Walther FJ, Waring AJ. <a href="https://www.frontiersin.org/journals/pediatrics/articles/10.3389/fped.2022.923010/full">Aerosol delivery of lung surfactant and nasal CPAP in the treatment of neonatal respiratory distress syndrome</a>. Front Pediatr. 2022;10:923010. doi:<a href="https://doi.org/10.3389/fped.2022.923010">10.3389/fped.2022.923010</a></div>
-      <div class="reference-item">6. Ari A, Rubin BK, Fink JB. <a href="https://www.frontiersin.org/journals/drug-delivery/articles/10.3389/fddev.2022.995489/full">Mesh nebulizers enabling transnasal pulmonary delivery of medical aerosols to infants and toddlers: roles, challenges, and opportunities</a>. Front Drug Deliv. 2022;2:995489. doi:<a href="https://doi.org/10.3389/fddev.2022.995489">10.3389/fddev.2022.995489</a></div>
-      <div class="reference-item">7. Bass K, Momin MAM, Howe C, et al. <a href="https://link.springer.com/article/10.1208/s12249-022-02259-z">Characterizing the effects of nasal prong interfaces on aerosol deposition in a preterm infant nasal model</a>. AAPS PharmSciTech. 2022;23(5):114. doi:<a href="https://doi.org/10.1208/s12249-022-02259-z">10.1208/s12249-022-02259-z</a></div>
-      <div class="reference-item">8. DiBlasi RM, Micheletti KJ, Zimmerman JD, Poli JA, Fink JB, Kajimoto M. <a href="https://www.mdpi.com/1999-4923/13/10/1580">Physiologic effects of instilled and aerosolized surfactant using a breath-synchronized nebulizer on surfactant-deficient rabbits</a>. Pharmaceutics. 2021;13(10):1580. doi:<a href="https://doi.org/10.3390/pharmaceutics13101580">10.3390/pharmaceutics13101580</a></div>
-      <div class="reference-item">9. Jardine L, Lui K, Liley HG, et al. <a href="https://fn.bmj.com/content/107/1/51">Trial of aerosolised surfactant for preterm infants with respiratory distress syndrome</a>. Arch Dis Child Fetal Neonatal Ed. 2022;107(1):51-55. doi:<a href="https://doi.org/10.1136/archdischild-2021-321645">10.1136/archdischild-2021-321645</a></div>
-    </div>
-  </div>
-</section>
-
 </body>
 </html>
