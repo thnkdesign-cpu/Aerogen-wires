@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aerogen Pharma — Technology Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-900: #0B1F3A;
+    --blue-700: #1F3A52;
+    --blue-500: #3D5A7A;
+    --blue-300: #8FA9C2;
+    --blue-100: #E8EFF5;
+    --gray-900: #1a1a1a;
+    --gray-700: #4a4a4a;
+    --gray-500: #767676;
+    --white: #fff;
+
+    --display: 'Space Grotesk', sans-serif;
+    --sans: 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--gray-900);
+    line-height: 1.6;
+  }
+
+  sup {
+    font-size: 0.75em;
+    vertical-align: super;
+  }
+
+  /* Navigation */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-5) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-logo {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--space-6);
+    list-style: none;
+    font-size: 13px;
+  }
+
+  .nav-links a {
+    color: var(--gray-700);
+    text-decoration: none;
+  }
+
+  .nav-cta {
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--gray-500);
+    background: transparent;
+    color: var(--gray-900);
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: var(--space-8) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+  }
+
+  .hero-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: stretch;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-700);
+    margin-bottom: var(--space-3);
+    font-weight: 500;
+  }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+  }
+
+  .hero p {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-visual {
+    min-height: 400px;
+    background: var(--blue-100);
+    border: 1px solid var(--blue-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-500);
+    font-size: 13px;
+    font-family: var(--mono);
+  }
+
+  /* Content Sections */
+  .content-section {
+    padding: var(--space-8) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+  }
+
+  .content-section.color-blocked {
+    background: var(--blue-100);
+  }
+
+  .section-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .content-section h2 {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+    line-height: 1.2;
+  }
+
+  .content-section h3 {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-4);
+    line-height: 1.3;
+  }
+
+  .content-section p {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .content-section p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .bullet-list {
+    list-style: none;
+    margin: var(--space-4) 0 var(--space-5) 0;
+  }
+
+  .bullet-list li {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-3);
+    padding-left: var(--space-5);
+    position: relative;
+  }
+
+  .bullet-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--blue-500);
+  }
+
+  /* Comparison Section */
+  .comparison-note {
+    padding: var(--space-4);
+    background: var(--blue-100);
+    border-left: 2px solid var(--blue-500);
+    margin: var(--space-5) 0;
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+
+  /* Component Grid */
+  .component-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+    margin: var(--space-5) 0 0 0;
+  }
+
+  .component-item {
+    padding: var(--space-4);
+    background: var(--blue-100);
+    border: 1px solid var(--blue-300);
+  }
+
+  .component-item h4 {
+    font-family: var(--display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-2);
+  }
+
+  .component-item p {
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Features Grid */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+    margin: var(--space-5) 0 0 0;
+  }
+
+  .feature-box {
+    padding: var(--space-4);
+    background: var(--blue-100);
+    border: 1px solid var(--blue-300);
+  }
+
+  .feature-box h4 {
+    font-family: var(--display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-2);
+  }
+
+  .feature-box p {
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* References Section */
+  .references-section {
+    padding: var(--space-8) 5vw;
+    background: var(--white);
+  }
+
+  .references-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .references-section h2 {
+    font-family: var(--display);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+  }
+
+  .references {
+    margin-top: var(--space-5);
+  }
+
+  .reference-item {
+    font-size: 12px;
+    color: var(--gray-700);
+    line-height: 1.6;
+    margin-bottom: var(--space-3);
+    padding-left: var(--space-4);
+    text-indent: calc(var(--space-4) * -1);
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-visual {
+      display: none;
+    }
+    .component-list {
+      grid-template-columns: 1fr;
+    }
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">AerogenPharma</div>
+  <ul class="nav-links">
+    <li><a href="#">Our Company</a></li>
+    <li><a href="#">Our Technology</a></li>
+    <li><a href="#">Pipeline</a></li>
+    <li><a href="#">Partnerships</a></li>
+    <li><a href="#">Understanding RDS</a></li>
+    <li><a href="#">Newsroom</a></li>
+    <li><a href="#">Culture & Careers</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Contact Us</a>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="section-label">Technology Platform</div>
+      <h1>Precision Aerosol Delivery for the Most Vulnerable Patients</h1>
+      <p>Aerogen Pharma is advancing an investigational aerosol drug delivery platform intended for critically ill patients, including very low birth weight preterm infants.<sup>1,2,5,7</sup></p>
+      <p>Built on decades of innovation in aerosol science, our proprietary technology is designed to support efficient, consistent, and targeted inhaled drug delivery in care settings where accurate dosing can be clinically meaningful.<sup>7,8</sup></p>
+      <p>Our platform combines vibrating mesh nebulization, breath-synchronized aerosol delivery, and a patient-centered interface design to address longstanding challenges associated with delivering medicines to the lung during respiratory support.<sup>5,7,8,10</sup></p>
+    </div>
+    <div class="hero-visual">[Image placeholder]</div>
+  </div>
+</section>
+
+<!-- Why is Aerosol Drug Delivery So Challenging Section -->
+<section class="content-section color-blocked">
+  <div class="section-container">
+    <div class="section-label">The Challenge</div>
+    <h2>Why is Aerosol Drug Delivery So Challenging?</h2>
+
+    <h3>Delivering Aerosol Medicines Is More Complex Than It Appears</h3>
+    <p>Inhaled therapies can deliver medication directly to the lungs, which may decrease systemic exposure and can increase effectiveness when localized effect drives efficacy. However, reliable and reproducible lung dosing can be challenging, particularly in critically ill patients and very small infants.<sup>7,8,12</sup></p>
+    <p>Drug delivery efficiency can be affected by numerous variables, including:<sup>6-9</sup></p>
+    <ul class="bullet-list">
+      <li>Patient size</li>
+      <li>Respiratory support modality and patient interface</li>
+      <li>Respiratory support settings</li>
+      <li>Nebulizer technology</li>
+      <li>Patient breathing patterns</li>
+      <li>Circuit configuration</li>
+      <li>Humidification systems</li>
+      <li>Aerosol generator placement</li>
+    </ul>
+    <p>As a result, the amount of medication that reaches the lungs can vary from patient to patient and across respiratory-support configurations.<sup>6-8</sup></p>
+
+    <h3>Lung Delivery in the Smallest Patients</h3>
+    <p>Small airways, low tidal volumes, rapid respiratory rates, and preferential nasal breathing make aerosol delivery especially challenging in preterm infants. Published studies report very low lung deposition for some less-optimized neonatal aerosol configurations (1 - 10%), while optimized mesh, breath-actuated, and nasal-interface approaches have been developed to increase lung delivery (30 - 50%) in preclinical, bench, and early clinical studies.<sup>3,5-7,9,10</sup></p>
+
+    <h3>Aerosol Loss During Continuous Nebulization</h3>
+    <p>With continuous nebulization, aerosol generated when an infant is not inhaling can be lost to the ventilator circuit or exhalation pathway, limiting the inhaled dose to as little as 1 - 10% of the total aerosol produced. Breath-synchronized aerosol generation is designed to deliver aerosol during inspiration, helping reduce expiratory drug loss and improve delivery efficiency. This approach results in up to 5-fold more emitted drug being inhaled compared with historical continuous nebulizer approaches.<sup>6,7,10</sup></p>
+  </div>
+</section>
+
+<!-- How Is Platform Different Section -->
+<section class="content-section">
+  <div class="section-container">
+    <div class="section-label">Comparison</div>
+    <h2>How Is the Aerogen Pharma Aerosol Drug Delivery Platform Different?</h2>
+    <h3>The Difference Is in the Details</h3>
+
+    <div class="comparison-note">
+      <strong>Scientific support note:</strong> The cited peer-reviewed literature supports the comparative mechanisms and direction of effect shown in this analysis. Exact Aerogen Pharma device-specific performance values should also be supported by the applicable Aerogen verification/validation reports or regulatory documentation.
+    </div>
+
+    <p>Continuous nebulization can lose aerosol during exhalation and within respiratory circuits, and larger particles are more likely to deposit in the upper airway. In infant and preterm-infant models, smaller particles less than approximately 3 microns have been associated with lower nasal deposition and greater lung delivery than larger particles.<sup>6,7,9</sup></p>
+    <p>Peer-reviewed descriptions of AeroFact and PDAP-based systems report fine aerosols in the approximately 2-3 micron or less than 3 micron range, a particle-size profile intended to support distal pulmonary delivery.<sup>5,10,11</sup></p>
+    <p>Respiratory support systems such as nasal CPAP rely on humidified gas flow and patient interfaces that can dilute aerosol or increase circuit and interface losses. Placing aerosol generation directly at the nasal prongs is one strategy studied to reduce these losses and improve delivery efficiency.<sup>5-9</sup></p>
+    <p>For established therapies where dosing is adjusted based on clinical response, some variability may be managed clinically. For novel drug-device combination products, biologics, and precision therapies, consistent pulmonary delivery is especially important.<sup>8,12,13</sup></p>
+    <p>Aerogen Pharma's technology platform is designed to increase delivery efficiency to the lung, reduce variability, and support confidence in pulmonary drug delivery in critical care environments.<sup>5,7,8,10</sup></p>
+  </div>
+</section>
+
+<!-- Platform Components Section -->
+<section class="content-section color-blocked">
+  <div class="section-container">
+    <div class="section-label">Platform Design</div>
+    <h2>How Does the Aerogen Pharma Aerosol Drug Delivery Platform Work?</h2>
+    <h3>Designed for Precision. Engineered for Performance.</h3>
+    <p>Aerogen Pharma's investigational delivery system combines three integrated components:</p>
+
+    <div class="component-list">
+      <div class="component-item">
+        <h4>Proprietary Vibrating Mesh Nebulizer</h4>
+        <p>A precision-engineered single-patient-use vibrating mesh nebulizer with a proprietary architecture designed to generate highly respirable aerosol particles for pulmonary delivery to infants.<sup>5,7,10,11</sup></p>
+      </div>
+      <div class="component-item">
+        <h4>Intelligent Controller</h4>
+        <p>A reusable controller intended to automate aerosol delivery, monitor dosing, and synchronize drug administration with the patient's breathing pattern.<sup>5,10,11</sup></p>
+      </div>
+      <div class="component-item">
+        <h4>Advanced Patient Interfaces</h4>
+        <p>Custom-designed interfaces position aerosol generation close to the patient's airway, a strategy intended to reduce medication loss and improve delivery efficiency.<sup>5-7,9</sup></p>
+      </div>
+    </div>
+
+    <p style="margin-top: var(--space-5);">Together, these components create an integrated platform designed to support reproducible aerosol delivery across patient populations and respiratory-support environments.<sup>5,8,10</sup></p>
+  </div>
+</section>
+
+<!-- PDAP Technology Section -->
+<section class="content-section">
+  <div class="section-container">
+    <div class="section-label">Core Technology</div>
+    <h2>What is PDAP™ Technology?</h2>
+    <h3>The Engine Behind the Platform</h3>
+    <p>At the core of Aerogen Pharma's technology is its proprietary Photo-Defined Aperture Plate (PDAP™) technology.</p>
+    <p>PDAP is a next-generation vibrating mesh platform intended to provide greater control over aerosol generation and delivery performance.<sup>10,11</sup></p>
+    <p>The PDAP consists of a precision-engineered dual-layer mesh architecture containing thousands of microscopic apertures that, when vibrated at 128,000 cycles per second, transform viscous, liquid formulations into highly respirable aerosol particles (2 - 3 micron).<sup>10,11</sup></p>
+    <p>This design enables control of aerosol characteristics, including droplet size and output rate, to support delivery of challenging inhaled therapies.<sup>7,10,11</sup></p>
+
+    <h3>Potential Advantages of PDAP Technology</h3>
+    <ul class="bullet-list">
+      <li>Generation of highly respirable aerosol particles optimized for lung delivery<sup>5,7,10,11</sup></li>
+      <li>Potential to aerosolize viscous solutions and suspensions<sup>7,12,13</sup></li>
+      <li>Rapid on-off aerosol generation during each breath, a feature particularly relevant for patients with fast respiratory rates such as infants<sup>5,10</sup></li>
+      <li>Potential to improve delivery efficiency for complex and high-cost formulations<sup>7,8,10,12,13</sup></li>
+      <li>Potential compatibility with biologics, proteins, peptides, nucleic acids, and other advanced therapeutics<sup>12,13</sup></li>
+      <li>Designed to support consistent and reproducible dosing<sup>8,10</sup></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Future Therapies Section -->
+<section class="content-section color-blocked">
+  <div class="section-container">
+    <div class="section-label">Future Applications</div>
+    <h2>How Does the Platform Support Future Inhaled Therapies?</h2>
+    <h3>Expanding the Possibilities of Inhaled Drug Delivery</h3>
+    <p>Aerosol delivery to preterm and newborn infants remains technically challenging. Many promising therapies were not originally developed for inhaled administration and can be difficult to aerosolize effectively, particularly when formulations have complex physicochemical properties.<sup>3,7,12,13</sup></p>
+    <p>Aerogen Pharma's platform was designed to support delivery of challenging formulations that may have characteristics such as:<sup>7,12,13</sup></p>
+    <ul class="bullet-list">
+      <li>High viscosity<sup>12,13</sup></li>
+      <li>Low surface tension<sup>12,13</sup></li>
+      <li>Large molecular size<sup>12,13</sup></li>
+      <li>Complex biologic structures<sup>12,13</sup></li>
+    </ul>
+    <p>The AeroFact Delivery System capabilities are being studied through the APC-0101 Development Program, where PDAP technology is being evaluated as part of an investigational non-invasive aerosolized surfactant drug-device combination approach for preterm infants with respiratory distress syndrome.<sup>4,5</sup></p>
+  </div>
+</section>
+
+<!-- Key Features Section -->
+<section class="content-section">
+  <div class="section-container">
+    <h2>Key Platform Features</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <h4>Precision Aerosol Generation</h4>
+        <p>Produces highly respirable aerosol particles in the approximately 1-3 micron range, a size range commonly targeted for efficient pulmonary delivery.<sup>5-7,10,11</sup></p>
+      </div>
+      <div class="feature-box">
+        <h4>Breath-Synchronized Delivery</h4>
+        <p>The aerosol particle generation is coordinated with the first milliseconds of patient inspiration to maximize lung deposition and minimize waste during exhalation.<sup>5,10,11</sup></p>
+      </div>
+      <div class="feature-box">
+        <h4>Airway-Level Aerosol Generation</h4>
+        <p>Places aerosol production close to the patient interface to reduce losses within the respiratory circuit.<sup>5-7,9</sup></p>
+      </div>
+      <div class="feature-box">
+        <h4>Automated Dosing Control</h4>
+        <p>Provides clinicians with standardized and reproducible aerosol administration.<sup>8,10</sup></p>
+      </div>
+      <div class="feature-box">
+        <h4>Modular Platform Architecture</h4>
+        <p>Designed for use across multiple drug candidates, disease states, and patient populations.<sup>8,12,13</sup></p>
+      </div>
+      <div class="feature-box">
+        <h4>Compatibility Across Care Settings</h4>
+        <p>Engineered for use across respiratory support modalities, including non-invasive respiratory support and mechanical ventilation.<sup>5,8,11</sup></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Future Vision Section -->
+<section class="content-section">
+  <div class="section-container">
+    <h2>Enabling the Future of Inhaled Therapeutics</h2>
+    <p>Aerogen Pharma is applying its proprietary aerosol delivery technology to develop drug-device combination products for serious respiratory diseases.<sup>3-5,7</sup></p>
+    <p>By combining aerosol engineering and trusted treatment options with clinically meaningful therapeutic targets, we aim to unlock new possibilities for inhaled medicines and support the development of therapies for neonatal patients with critical respiratory conditions.<sup>3,7,8,12,13</sup></p>
+  </div>
+</section>
+
+<!-- References Section -->
+<section class="references-section">
+  <div class="references-container">
+    <h2>References</h2>
+    <div class="references">
+      <div class="reference-item">1. Sweet DG, Carnielli VP, Greisen G, Hallman M, Ozek E, te Pas A, et al. European consensus guidelines on the management of respiratory distress syndrome: 2022 update. Neonatology. 2023;120(1):3-23. doi:10.1159/000528914</div>
+      <div class="reference-item">2. Ekhaguere OA, Okonkwo IR, Batra M, Hedstrom AB. Respiratory distress syndrome management in resource limited settings: current evidence and opportunities in 2022. Front Pediatr. 2022;10:961509. doi:10.3389/fped.2022.961509</div>
+      <div class="reference-item">3. Rao S, Edmond K, Bahl R. Target product profile: aerosolized surfactant for neonatal respiratory distress. Bull World Health Organ. 2023;101(5):341-345. doi:10.2471/BLT.23.289727</div>
+      <div class="reference-item">4. Jardine L, Lui K, Liley HG, et al. Trial of aerosolised surfactant for preterm infants with respiratory distress syndrome. Arch Dis Child Fetal Neonatal Ed. 2022;107(1):51-55. doi:10.1136/archdischild-2021-321645</div>
+      <div class="reference-item">5. Lategan I, Durand D, Harrison M, et al. A multicentre neonatal interventional randomised controlled trial of nebulized surfactant for preterm infants with respiratory distress: Neo-INSPIRe trial protocol. BMC Pediatr. 2023;23(1):472. doi:10.1186/s12887-023-04296-4</div>
+      <div class="reference-item">6. Walther FJ, Waring AJ. Aerosol delivery of lung surfactant and nasal CPAP in the treatment of neonatal respiratory distress syndrome. Front Pediatr. 2022;10:923010. doi:10.3389/fped.2022.923010</div>
+      <div class="reference-item">7. Ari A, Rubin BK, Fink JB. Mesh nebulizers enabling transnasal pulmonary delivery of medical aerosols to infants and toddlers: roles, challenges, and opportunities. Front Drug Deliv. 2022;2:995489. doi:10.3389/fddev.2022.995489</div>
+      <div class="reference-item">8. Li J, Liu K, Lyu S, et al. Aerosol therapy in adult critically ill patients: a consensus statement regarding aerosol administration strategies during various modes of respiratory support. Ann Intensive Care. 2023;13(1):63. doi:10.1186/s13613-023-01147-4</div>
+      <div class="reference-item">9. Bass K, Momin MAM, Howe C, Aladwani G, Strickler S, Kolanjiyil AV, et al. Characterizing the effects of nasal prong interfaces on aerosol deposition in a preterm infant nasal model. AAPS PharmSciTech. 2022;23(5):114. doi:10.1208/s12249-022-02259-z</div>
+      <div class="reference-item">10. DiBlasi RM, Micheletti KJ, Zimmerman JD, Poli JA, Fink JB, Kajimoto M. Physiologic effects of instilled and aerosolized surfactant using a breath-synchronized nebulizer on surfactant-deficient rabbits. Pharmaceutics. 2021;13(10):1580. doi:10.3390/pharmaceutics13101580</div>
+      <div class="reference-item">11. Dushianthan A, Clark HW, Brealey D, Cusack R, Goss V, Knapp S, et al. A randomized controlled trial of nebulized surfactant for the treatment of severe COVID-19 in adults (COVSurf trial). Sci Rep. 2023;13(1):20946. doi:10.1038/s41598-023-47672-x</div>
+      <div class="reference-item">12. Qin L, Cui Z, Wu Y, Wang H, Zhang X, Guan J, Mao S. Challenges and strategies to enhance the systemic absorption of inhaled peptides and proteins. Pharm Res. 2023;40(5):1037-1055. doi:10.1007/s11095-022-03435-3</div>
+      <div class="reference-item">13. Farinha S, Sa JV, Lino PR, Galesio M, Pires J, Rodrigues MA, Henriques J. Spray freeze drying of biologics: a review and applications for inhalation delivery. Pharm Res. 2023;40(5):1115-1140. doi:10.1007/s11095-022-03442-4</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

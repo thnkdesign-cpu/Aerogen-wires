@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treatments & Therapies — Aerogen Pharma</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-900: #0B1F3A;
+    --blue-700: #1F3A52;
+    --blue-500: #3D5A7A;
+    --blue-300: #8FA9C2;
+    --blue-100: #E8EFF5;
+    --gray-900: #1a1a1a;
+    --gray-700: #4a4a4a;
+    --gray-500: #767676;
+    --white: #fff;
+
+    --display: 'Space Grotesk', sans-serif;
+    --sans: 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--gray-900);
+    line-height: 1.6;
+  }
+
+  sup {
+    font-size: 0.75em;
+    vertical-align: super;
+  }
+
+  /* Navigation */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-5) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-logo {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--space-6);
+    list-style: none;
+    font-size: 13px;
+  }
+
+  .nav-links a {
+    color: var(--gray-700);
+    text-decoration: none;
+  }
+
+  .nav-cta {
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--gray-500);
+    background: transparent;
+    color: var(--gray-900);
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: var(--space-8) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+  }
+
+  .hero-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: stretch;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+  }
+
+  .hero p {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-visual {
+    min-height: 400px;
+    background: var(--blue-100);
+    border: 1px solid var(--blue-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-500);
+    font-size: 13px;
+    font-family: var(--mono);
+  }
+
+  /* Content Sections */
+  .content-section {
+    padding: var(--space-8) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+  }
+
+  .content-section.color-blocked {
+    background: var(--blue-100);
+  }
+
+  .section-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-700);
+    margin-bottom: var(--space-3);
+    font-weight: 500;
+  }
+
+  .content-section h2 {
+    font-family: var(--display);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+    line-height: 1.2;
+  }
+
+  .content-section p {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .content-section p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .content-section ul {
+    margin: var(--space-4) 0 var(--space-4) var(--space-6);
+    list-style: none;
+  }
+
+  .content-section ul li {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-3);
+    position: relative;
+    padding-left: var(--space-4);
+  }
+
+  .content-section ul li:before {
+    content: "•";
+    color: var(--blue-500);
+    position: absolute;
+    left: 0;
+  }
+
+  /* Buttons/Links */
+  .section-link {
+    display: inline-block;
+    margin-top: var(--space-5);
+    margin-right: var(--space-4);
+    padding: var(--space-3) var(--space-6);
+    background: var(--blue-500);
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid var(--blue-500);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .section-link:hover {
+    background: var(--blue-700);
+    border-color: var(--blue-700);
+  }
+
+  /* 50/50 Grid for Content Sections */
+  .section-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: stretch;
+  }
+
+  .section-grid.reverse {
+    direction: rtl;
+  }
+
+  .section-grid.reverse > * {
+    direction: ltr;
+  }
+
+  .grid-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  /* Image Placeholders */
+  .section-visual {
+    min-height: 400px;
+    background: var(--blue-100);
+    border: 1px solid var(--blue-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-500);
+    font-size: 13px;
+    font-family: var(--mono);
+  }
+
+  .full-width-visual {
+    width: 100%;
+    margin: var(--space-8) 0;
+    min-height: 400px;
+    background: var(--blue-100);
+    border: 1px solid var(--blue-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-500);
+    font-size: 13px;
+    font-family: var(--mono);
+  }
+
+  /* References Section */
+  .references-section {
+    padding: var(--space-8) 5vw;
+    background: var(--white);
+  }
+
+  .references-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .references-section h2 {
+    font-family: var(--display);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+  }
+
+  .references {
+    margin-top: var(--space-5);
+  }
+
+  .reference-item {
+    font-size: 12px;
+    color: var(--gray-700);
+    line-height: 1.6;
+    margin-bottom: var(--space-3);
+    padding-left: var(--space-4);
+    text-indent: calc(var(--space-4) * -1);
+  }
+
+  .reference-item a {
+    color: var(--blue-500);
+    text-decoration: none;
+  }
+
+  .reference-item a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-visual {
+      display: none;
+    }
+    .section-grid {
+      grid-template-columns: 1fr;
+    }
+    .section-grid.reverse {
+      direction: ltr;
+    }
+    .section-visual {
+      display: none;
+    }
+    .full-width-visual {
+      display: none;
+    }
+    .nav-links {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-logo">AerogenPharma</div>
+  <ul class="nav-links">
+    <li><a href="#">Our Company</a></li>
+    <li><a href="#">Our Technology</a></li>
+    <li><a href="#">Pipeline</a></li>
+    <li><a href="#">Partnerships</a></li>
+    <li><a href="#">Understanding RDS</a></li>
+    <li><a href="#">Newsroom</a></li>
+    <li><a href="#">Culture & Careers</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Contact Us</a>
+</nav>
+
+<!-- Current Treatment Section (Hero) -->
+<section class="hero color-blocked">
+  <div class="section-grid">
+    <div class="grid-content">
+      <h1>Current Treatment and Therapy Approaches</h1>
+      <p>The treatment for RDS is focused on supporting breathing, improving oxygen delivery, and addressing the underlying surfactant deficiency that contributes to lung instability. Current treatment approaches include:<sup>1</sup></p>
+      <ul>
+        <li>Non-invasive respiratory support</li>
+        <li>Oxygen therapy</li>
+        <li>Surfactant replacement therapy</li>
+        <li>Other supportive neonatal care</li>
+      </ul>
+    </div>
+    <div class="section-visual">[Image placeholder]</div>
+  </div>
+</section>
+
+<!-- The Need for Innovation Section -->
+<section class="content-section">
+  <div class="section-container">
+    <div class="section-label">Innovation & Access</div>
+    <h2>The Need for Continued Innovation</h2>
+    <p>Despite significant advances in neonatal medicine, important challenges remain in the treatment of RDS.<sup>1-3</sup></p>
+    <p>Many current therapies require specialized equipment, invasive procedures, or highly trained clinical staff. These barriers can limit access to life-saving care, particularly in resource-constrained healthcare settings.<sup>2,4</sup></p>
+    <p>Researchers and innovators continue to explore new approaches that may simplify treatment, reduce invasiveness, expand access to care, and improve outcomes for vulnerable preterm infants around the world.<sup>3-6</sup></p>
+    <p>Advancing respiratory therapies that can be delivered more efficiently and less invasively remains an important area of focus in neonatal medicine.<sup>3-6</sup></p>
+    <div class="full-width-visual">[Image placeholder]</div>
+  </div>
+</section>
+
+<!-- The Opportunity Section -->
+<section class="content-section color-blocked">
+  <div class="section-container">
+    <div class="section-label">Future Delivery Methods</div>
+    <h2>The Opportunity for Non-Invasive Surfactant Delivery</h2>
+    <p>While surfactant replacement therapy has transformed the treatment of RDS, significant challenges remain in how therapy is delivered to preterm infants.<sup>1,3</sup></p>
+    <p>Advanced treatment approaches are being developed that could deliver surfactant therapy while minimizing invasiveness and reducing the need for mechanical ventilation.<sup>3,5,6</sup></p>
+    <p>A non-invasive method of surfactant delivery has the potential to simplify treatment, expand access to care, and help more premature infants benefit from surfactant replacement therapy.<sup>4-6</sup></p>
+    <div class="full-width-visual">[Image placeholder]</div>
+    <p>At Aerogen Pharma, we are advancing the development of investigational aerosolized surfactant therapies designed to address this important unmet need in neonatal medicine.<sup>6-8</sup></p>
+  </div>
+</section>
+
+<!-- Learn More Section -->
+<section class="content-section">
+  <div class="section-container">
+    <div class="section-label">Aerogen Development</div>
+    <h2>Learn More About the AeroFact™ Development Program</h2>
+    <p>Discover how Aerogen Pharma is developing an investigational non-invasive surfactant delivery approach for the treatment of RDS in preterm infants.<sup>7,8</sup></p>
+    <a href="#" class="section-link">Explore the AeroFact™ Development Program</a>
+  </div>
+</section>
+
+<!-- References Section -->
+<section class="references-section">
+  <div class="references-container">
+    <h2>References</h2>
+    <div class="references">
+      <div class="reference-item">1. Sweet DG, Carnielli VP, Greisen G, et al. <a href="https://karger.com/neo/article/doi/10.1159/000551062/945992/European-Consensus-Guidelines-on-the-Management-of">European consensus guidelines on the management of respiratory distress syndrome: 2025</a>. Neonatology. 2026. Published online March 9, 2026. doi:<a href="https://doi.org/10.1159/000551062">10.1159/000551062</a></div>
+      <div class="reference-item">2. Ekhaguere OA, Okonkwo IR, Batra M, Hedstrom AB. <a href="https://www.frontiersin.org/journals/pediatrics/articles/10.3389/fped.2022.961509/full">Respiratory distress syndrome management in resource limited settings: current evidence and opportunities in 2022</a>. Front Pediatr. 2022;10:961509. doi:<a href="https://doi.org/10.3389/fped.2022.961509">10.3389/fped.2022.961509</a></div>
+      <div class="reference-item">3. Hartel C, Kribs A, Gopel W, Dargaville PA, Herting E. <a href="https://karger.com/neo/article/121/5/584/912456/Less-Invasive-Surfactant-Administration-for">Less invasive surfactant administration for preterm infants: state of the art</a>. Neonatology. 2024;121(5):584-595. doi:<a href="https://doi.org/10.1159/000540078">10.1159/000540078</a></div>
+      <div class="reference-item">4. Rao S, Edmond K, Bahl R. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10140689/">Target product profile: aerosolized surfactant for neonatal respiratory distress</a>. Bull World Health Organ. 2023;101(5):341-345. doi:<a href="https://doi.org/10.2471/BLT.23.289727">10.2471/BLT.23.289727</a></div>
+      <div class="reference-item">5. Walther FJ, Waring AJ. <a href="https://www.frontiersin.org/journals/pediatrics/articles/10.3389/fped.2022.923010/full">Aerosol delivery of lung surfactant and nasal CPAP in the treatment of neonatal respiratory distress syndrome</a>. Front Pediatr. 2022;10:923010. doi:<a href="https://doi.org/10.3389/fped.2022.923010">10.3389/fped.2022.923010</a></div>
+      <div class="reference-item">6. Jardine L, Lui K, Liley HG, et al. <a href="https://fn.bmj.com/content/107/1/51">Trial of aerosolised surfactant for preterm infants with respiratory distress syndrome</a>. Arch Dis Child Fetal Neonatal Ed. 2022;107(1):51-55. doi:<a href="https://doi.org/10.1136/archdischild-2021-321645">10.1136/archdischild-2021-321645</a></div>
+      <div class="reference-item">7. Lategan I, Durand D, Harrison M, et al. <a href="https://link.springer.com/article/10.1186/s12887-023-04296-4">A multicentre neonatal interventional randomised controlled trial of nebulized surfactant for preterm infants with respiratory distress: Neo-INSPIRe trial protocol</a>. BMC Pediatr. 2023;23(1):472. doi:<a href="https://doi.org/10.1186/s12887-023-04296-4">10.1186/s12887-023-04296-4</a></div>
+      <div class="reference-item">8. ClinicalTrials.gov. <a href="https://clinicaltrials.gov/study/NCT06776783">Safety and efficacy of APC-0101 in preterm infants with respiratory distress syndrome</a>. ClinicalTrials.gov identifier NCT06776783. Updated April 14, 2026. Accessed July 2, 2026. <a href="https://clinicaltrials.gov/study/NCT06776783">https://clinicaltrials.gov/study/NCT06776783</a></div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

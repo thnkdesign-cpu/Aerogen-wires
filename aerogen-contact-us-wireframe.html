@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Aerogen Pharma</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-900: #0B1F3A;
+    --blue-700: #1F3A52;
+    --blue-500: #3D5A7A;
+    --blue-300: #8FA9C2;
+    --blue-100: #E8EFF5;
+    --gray-900: #1a1a1a;
+    --gray-700: #4a4a4a;
+    --gray-500: #767676;
+    --white: #fff;
+
+    --display: 'Space Grotesk', sans-serif;
+    --sans: 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--gray-900);
+    line-height: 1.6;
+  }
+
+  sup {
+    font-size: 0.75em;
+    vertical-align: super;
+  }
+
+  /* Navigation */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-5) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-logo {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--space-6);
+    list-style: none;
+    font-size: 13px;
+  }
+
+  .nav-links a {
+    color: var(--gray-700);
+    text-decoration: none;
+  }
+
+  .nav-cta {
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--gray-500);
+    background: transparent;
+    color: var(--gray-900);
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: var(--space-8) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+  }
+
+  .hero-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+  }
+
+  .hero p {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  /* 50/50 Grid for Hero */
+  .hero-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: stretch;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .hero-visual {
+    min-height: 400px;
+    background: var(--blue-100);
+    border: 1px solid var(--blue-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-500);
+    font-size: 13px;
+    font-family: var(--mono);
+  }
+
+  /* Content Sections */
+  .content-section {
+    padding: var(--space-8) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+  }
+
+  .content-section.color-blocked {
+    background: var(--blue-100);
+  }
+
+  .section-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-700);
+    margin-bottom: var(--space-3);
+    font-weight: 500;
+  }
+
+  .content-section h2 {
+    font-family: var(--display);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+    line-height: 1.2;
+  }
+
+  .content-section p {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .content-section p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .content-section ul {
+    margin: var(--space-4) 0 var(--space-4) var(--space-6);
+    list-style: none;
+  }
+
+  .content-section ul li {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-3);
+    position: relative;
+    padding-left: var(--space-4);
+  }
+
+  .content-section ul li:before {
+    content: "•";
+    color: var(--blue-500);
+    position: absolute;
+    left: 0;
+  }
+
+  /* Links */
+  .content-section a {
+    color: var(--blue-500);
+    text-decoration: none;
+  }
+
+  .content-section a:hover {
+    text-decoration: underline;
+  }
+
+  /* Feature Grid */
+  .inquiry-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+    margin: var(--space-6) 0;
+  }
+
+  .inquiry-card {
+    padding: var(--space-5);
+    background: var(--blue-100);
+    border: 1px solid var(--blue-300);
+  }
+
+  .inquiry-card h3 {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-3);
+  }
+
+  .inquiry-card p {
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Form Placeholder */
+  .form-placeholder {
+    margin: var(--space-6) 0;
+    padding: var(--space-8);
+    background: var(--blue-100);
+    border: 1px solid var(--blue-300);
+    text-align: center;
+    color: var(--blue-500);
+    font-family: var(--mono);
+    font-size: 13px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Contact Info */
+  .contact-info {
+    background: var(--blue-100);
+    border: 1px solid var(--blue-300);
+    padding: var(--space-5);
+    margin: var(--space-6) 0 0 0;
+  }
+
+  .contact-info h3 {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-4);
+  }
+
+  .contact-info p {
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.8;
+    margin-bottom: var(--space-2);
+  }
+
+  .contact-info p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-visual {
+      display: none;
+    }
+    .inquiry-grid {
+      grid-template-columns: 1fr;
+    }
+    .nav-links {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-logo">AerogenPharma</div>
+  <ul class="nav-links">
+    <li><a href="#">Our Company</a></li>
+    <li><a href="#">Our Technology</a></li>
+    <li><a href="#">Pipeline</a></li>
+    <li><a href="#">Partnerships</a></li>
+    <li><a href="#">Understanding RDS</a></li>
+    <li><a href="#">Newsroom</a></li>
+    <li><a href="#">Culture & Careers</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Contact Us</a>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <h1>Let's Start the Conversation</h1>
+      <p>Aerogen Pharma is committed to advancing innovative inhaled therapies for critically ill patients, with a particular focus on neonatal and respiratory medicine.</p>
+      <p>Whether you are a healthcare professional, researcher, potential partner, member of the media, or simply interested in learning more about our company, we welcome your inquiry.</p>
+    </div>
+    <div class="hero-visual">[Image placeholder]</div>
+  </div>
+</section>
+
+<!-- Ways to Inquire Section -->
+<section class="content-section color-blocked">
+  <div class="section-container">
+    <div class="section-label">Contact Options</div>
+    <h2>We welcome inquirers about:</h2>
+    <div class="inquiry-grid">
+      <div class="inquiry-card">
+        <h3>Business Development & Strategic Partnerships</h3>
+      </div>
+      <div class="inquiry-card">
+        <h3>Research & Clinical Development</h3>
+      </div>
+      <div class="inquiry-card">
+        <h3>Medical Information</h3>
+      </div>
+      <div class="inquiry-card">
+        <h3>General Inquiries</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Additional Information Section -->
+<section class="content-section">
+  <div class="section-container">
+    <p>If you are interested in participating as a clinical site in our ongoing phase 3 clinical study, please visit <a href="https://clinicaltrials.gov/study/NCT06776783">https://clinicaltrials.gov/study/NCT06776783</a></p>
+    <p>If you're a member of the news media, please visit our <a href="#">newsroom</a>.</p>
+    <p>Fill out the form below and we route it to the appropriate department who will get back to you in 48 hours.</p>
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="content-section">
+  <div class="section-container">
+    <div class="form-placeholder">[Contact Form Placeholder]</div>
+  </div>
+</section>
+
+<!-- Corporate Headquarters Section -->
+<section class="content-section">
+  <div class="section-container">
+    <div class="section-label">Corporate Office</div>
+    <h2>Corporate Headquarters</h2>
+    <div class="contact-info">
+      <h3>Aerogen Pharma bCorp.</h3>
+      <p>3005 Carrington Mill Boulevard</p>
+      <p>Morrisville, NC 25760</p>
+      <p>USA</p>
+      <p style="margin-top: var(--space-4);">Phone: [Insert Main Number]</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

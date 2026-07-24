@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Respiratory Distress Syndrome (RDS) Overview — Aerogen Pharma</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-900: #0B1F3A;
+    --blue-700: #1F3A52;
+    --blue-500: #3D5A7A;
+    --blue-300: #8FA9C2;
+    --blue-100: #E8EFF5;
+    --gray-900: #1a1a1a;
+    --gray-700: #4a4a4a;
+    --gray-500: #767676;
+    --white: #fff;
+
+    --display: 'Space Grotesk', sans-serif;
+    --sans: 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--gray-900);
+    line-height: 1.6;
+  }
+
+  sup {
+    font-size: 0.75em;
+    vertical-align: super;
+  }
+
+  /* Navigation */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-5) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-logo {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--space-6);
+    list-style: none;
+    font-size: 13px;
+  }
+
+  .nav-links a {
+    color: var(--gray-700);
+    text-decoration: none;
+  }
+
+  .nav-cta {
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--gray-500);
+    background: transparent;
+    color: var(--gray-900);
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: var(--space-8) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+  }
+
+  .hero-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: stretch;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+  }
+
+  .hero p {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-visual {
+    min-height: 400px;
+    background: var(--blue-100);
+    border: 1px solid var(--blue-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-500);
+    font-size: 13px;
+    font-family: var(--mono);
+  }
+
+  /* Content Sections */
+  .content-section {
+    padding: var(--space-8) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+  }
+
+  .content-section.color-blocked {
+    background: var(--blue-100);
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-700);
+    margin-bottom: var(--space-3);
+    font-weight: 500;
+  }
+
+  .content-section h2 {
+    font-family: var(--display);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+    line-height: 1.2;
+  }
+
+  .content-section p {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .content-section p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .content-section ul {
+    margin: var(--space-4) 0 var(--space-4) var(--space-6);
+    list-style: none;
+  }
+
+  .content-section ul li {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-3);
+    position: relative;
+    padding-left: var(--space-4);
+  }
+
+  .content-section ul li:before {
+    content: "•";
+    color: var(--blue-500);
+    position: absolute;
+    left: 0;
+  }
+
+  /* Buttons/Links */
+  .section-link {
+    display: inline-block;
+    margin-top: var(--space-5);
+    margin-right: var(--space-4);
+    padding: var(--space-3) var(--space-6);
+    background: var(--blue-500);
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid var(--blue-500);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .section-link:hover {
+    background: var(--blue-700);
+    border-color: var(--blue-700);
+  }
+
+  /* 50/50 Grid for Content Sections */
+  .section-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: stretch;
+  }
+
+  .section-grid.reverse {
+    direction: rtl;
+  }
+
+  .section-grid.reverse > * {
+    direction: ltr;
+  }
+
+  .grid-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  /* Image Placeholders in Content Sections */
+  .section-visual {
+    min-height: 400px;
+    background: var(--blue-100);
+    border: 1px solid var(--blue-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-500);
+    font-size: 13px;
+    font-family: var(--mono);
+  }
+
+  /* Safety/Callout Box */
+  .safety-box {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--space-5);
+    border: 2px solid var(--blue-500);
+    background: var(--blue-100);
+    border-radius: 0;
+  }
+
+  .safety-box h3 {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-3);
+  }
+
+  .safety-box p {
+    font-size: 14px;
+    color: var(--gray-900);
+    line-height: 1.7;
+    font-weight: 600;
+  }
+
+  /* References Section */
+  .references-section {
+    padding: var(--space-8) 5vw;
+    background: var(--white);
+  }
+
+  .references-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .references-section h2 {
+    font-family: var(--display);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+  }
+
+  .references {
+    margin-top: var(--space-5);
+  }
+
+  .reference-item {
+    font-size: 12px;
+    color: var(--gray-700);
+    line-height: 1.6;
+    margin-bottom: var(--space-3);
+    padding-left: var(--space-4);
+    text-indent: calc(var(--space-4) * -1);
+  }
+
+  .reference-item a {
+    color: var(--blue-500);
+    text-decoration: none;
+  }
+
+  .reference-item a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-visual {
+      display: none;
+    }
+    .section-grid {
+      grid-template-columns: 1fr;
+    }
+    .section-grid.reverse {
+      direction: ltr;
+    }
+    .section-visual {
+      display: none;
+    }
+    .nav-links {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-logo">AerogenPharma</div>
+  <ul class="nav-links">
+    <li><a href="#">Our Company</a></li>
+    <li><a href="#">Our Technology</a></li>
+    <li><a href="#">Pipeline</a></li>
+    <li><a href="#">Partnerships</a></li>
+    <li><a href="#">Understanding RDS</a></li>
+    <li><a href="#">Newsroom</a></li>
+    <li><a href="#">Culture & Careers</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Contact Us</a>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <h1>Respiratory Distress Syndrome (RDS) in Preterm Infants</h1>
+    </div>
+    <div class="hero-visual">[Image placeholder]</div>
+  </div>
+</section>
+
+<!-- What is RDS? Section -->
+<section class="content-section color-blocked">
+  <div class="section-grid">
+    <div class="grid-content">
+      <div class="section-label">Condition Overview</div>
+      <h2>What is RDS?</h2>
+      <p>Respiratory Distress Syndrome (RDS) is a serious complication that can affect preterm infants. RDS occurs when a baby's lungs have not fully developed and are unable to produce sufficient amounts of surfactant, a naturally occurring substance that reduces surface tension and helps keep the tiny air sacs (called alveoli) in the lungs open during breathing.<sup>1,2</sup></p>
+      <p>Without enough surfactant, the lungs become stiff and unstable, causing the air sacs to collapse after each breath. As a result, infants with RDS must work much harder to breathe and may struggle to obtain the oxygen their bodies need.<sup>1,2</sup></p>
+      <p>RDS affects infants born prematurely; the earlier a baby is born, the greater the risk of developing the condition. While advances in neonatal care have significantly improved outcomes, RDS remains a major cause of illness and death among preterm infants worldwide.<sup>1,2</sup></p>
+    </div>
+    <div class="section-visual">[Image placeholder]</div>
+  </div>
+</section>
+
+<!-- Signs and Symptoms Section -->
+<section class="content-section">
+  <div class="section-grid reverse">
+    <div class="section-visual">[Image placeholder]</div>
+    <div class="grid-content">
+      <div class="section-label">Symptoms & Signs</div>
+      <h2>Signs and Symptoms of RDS</h2>
+      <p>Symptoms of RDS typically appear shortly after birth and may include:<sup>1</sup></p>
+      <ul>
+        <li>Rapid breathing</li>
+        <li>Grunting sounds during breathing</li>
+        <li>Flaring of the nostrils</li>
+        <li>Chest retractions (pulling in of the chest wall during breathing)</li>
+        <li>Low blood oxygen levels</li>
+        <li>Typical chest X-ray appearance</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- How RDS Is Treated Section -->
+<section class="content-section color-blocked">
+  <div class="section-grid">
+    <div class="grid-content">
+      <div class="section-label">Treatment Approaches</div>
+      <h2>How RDS Is Treated</h2>
+      <p>Treatment depends on the severity of the condition and may include:<sup>1,3</sup></p>
+      <ul>
+        <li>Supplemental oxygen</li>
+        <li>Respiratory support, such as nasal Continuous Positive Airway Pressure (nCPAP)</li>
+        <li>Surfactant replacement therapy for infants with more severe RDS</li>
+      </ul>
+      <p>Early diagnosis and timely treatment are important to help improve breathing, reduce complications, and support healthy development.<sup>1,3</sup></p>
+      <p>If your child has been diagnosed with RDS, your healthcare team can provide information about available treatment options and ongoing clinical research.<sup>4-7</sup></p>
+    </div>
+    <div class="section-visual">[Image placeholder]</div>
+  </div>
+</section>
+
+<!-- Aerogen Investigational Approach Section -->
+<section class="content-section">
+  <div class="section-grid reverse">
+    <div class="section-visual">[Image placeholder]</div>
+    <div class="grid-content">
+      <div class="section-label">Innovation & Research</div>
+      <h2>Aerogen Pharma's Investigational Approach</h2>
+      <p>Aerogen Pharma is developing APC-0101, an investigational drug-device combination product designed to deliver aerosolized surfactant to preterm infants with RDS receiving non-invasive respiratory support.<sup>4-7</sup></p>
+      <p>This investigational therapy is being evaluated in clinical studies and has not been approved for commercial use. It is available only through authorized clinical trials conducted under applicable regulatory requirements.<sup>7</sup></p>
+      <p>To continue learning about RDS, explore current treatment approaches or learn more about Aerogen Pharma's investigational APC-0101 development program below.</p>
+      <a href="#" class="section-link">Explore Treatments & Therapies</a>
+      <a href="#" class="section-link">Explore the APC-0101 Development Program</a>
+    </div>
+  </div>
+</section>
+
+<!-- Important Safety Information -->
+<section class="content-section">
+  <div class="safety-box">
+    <h3>Important Safety Information</h3>
+    <p>This investigational therapy has not been approved by any regulatory authority. Its safety and effectiveness have not been established.<sup>7</sup></p>
+  </div>
+</section>
+
+<!-- References Section -->
+<section class="references-section">
+  <div class="references-container">
+    <h2>References</h2>
+    <div class="references">
+      <div class="reference-item">1. Sweet DG, Carnielli VP, Greisen G, et al. <a href="https://karger.com/neo/article/doi/10.1159/000551062/945992/European-Consensus-Guidelines-on-the-Management-of">European consensus guidelines on the management of respiratory distress syndrome: 2025</a>. Neonatology. 2026. Published online March 9, 2026. doi:<a href="https://doi.org/10.1159/000551062">10.1159/000551062</a></div>
+      <div class="reference-item">2. Ekhaguere OA, Okonkwo IR, Batra M, Hedstrom AB. <a href="https://www.frontiersin.org/journals/pediatrics/articles/10.3389/fped.2022.961509/full">Respiratory distress syndrome management in resource limited settings: current evidence and opportunities in 2022</a>. Front Pediatr. 2022;10:961509. doi:<a href="https://doi.org/10.3389/fped.2022.961509">10.3389/fped.2022.961509</a></div>
+      <div class="reference-item">3. Hartel C, Kribs A, Gopel W, Dargaville PA, Herting E. <a href="https://karger.com/neo/article/121/5/584/912456/Less-Invasive-Surfactant-Administration-for">Less invasive surfactant administration for preterm infants: state of the art</a>. Neonatology. 2024;121(5):584-595. doi:<a href="https://doi.org/10.1159/000540078">10.1159/000540078</a></div>
+      <div class="reference-item">4. Walther FJ, Waring AJ. <a href="https://www.frontiersin.org/journals/pediatrics/articles/10.3389/fped.2022.923010/full">Aerosol delivery of lung surfactant and nasal CPAP in the treatment of neonatal respiratory distress syndrome</a>. Front Pediatr. 2022;10:923010. doi:<a href="https://doi.org/10.3389/fped.2022.923010">10.3389/fped.2022.923010</a></div>
+      <div class="reference-item">5. Jardine L, Lui K, Liley HG, et al. <a href="https://fn.bmj.com/content/107/1/51">Trial of aerosolised surfactant for preterm infants with respiratory distress syndrome</a>. Arch Dis Child Fetal Neonatal Ed. 2022;107(1):51-55. doi:<a href="https://doi.org/10.1136/archdischild-2021-321645">10.1136/archdischild-2021-321645</a></div>
+      <div class="reference-item">6. Lategan I, Durand D, Harrison M, et al. <a href="https://link.springer.com/article/10.1186/s12887-023-04296-4">A multicentre neonatal interventional randomised controlled trial of nebulized surfactant for preterm infants with respiratory distress: Neo-INSPIRe trial protocol</a>. BMC Pediatr. 2023;23(1):472. doi:<a href="https://doi.org/10.1186/s12887-023-04296-4">10.1186/s12887-023-04296-4</a></div>
+      <div class="reference-item">7. ClinicalTrials.gov. <a href="https://clinicaltrials.gov/study/NCT06776783">Safety and efficacy of APC-0101 in preterm infants with respiratory distress syndrome</a>. ClinicalTrials.gov identifier NCT06776783. Updated April 14, 2026. Accessed July 2, 2026. <a href="https://clinicaltrials.gov/study/NCT06776783">https://clinicaltrials.gov/study/NCT06776783</a></div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
