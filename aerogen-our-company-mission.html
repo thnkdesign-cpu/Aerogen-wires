@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission — Our Company — Aerogen Pharma</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-900: #0B1F3A;
+    --blue-700: #1F3A52;
+    --blue-500: #3D5A7A;
+    --blue-300: #8FA9C2;
+    --blue-100: #E8EFF5;
+    --gray-900: #1a1a1a;
+    --gray-700: #4a4a4a;
+    --gray-500: #767676;
+    --white: #fff;
+
+    --display: 'Space Grotesk', sans-serif;
+    --sans: 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--gray-900);
+    line-height: 1.6;
+  }
+
+  sup {
+    font-size: 0.75em;
+    vertical-align: super;
+  }
+
+  /* Navigation */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-5) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-logo {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--space-6);
+    list-style: none;
+    font-size: 13px;
+  }
+
+  .nav-links a {
+    color: var(--gray-700);
+    text-decoration: none;
+  }
+
+  .nav-cta {
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--gray-500);
+    background: transparent;
+    color: var(--gray-900);
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: var(--space-8) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+  }
+
+  .hero-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: stretch;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+  }
+
+  .hero p {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .hero p:last-child {
+    margin-bottom: 0;
+  }
+
+  .hero-visual {
+    min-height: 400px;
+    background: var(--blue-100);
+    border: 1px solid var(--blue-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-500);
+    font-size: 13px;
+    font-family: var(--mono);
+  }
+
+  /* Main Content Layout */
+  .main-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-8);
+    padding: var(--space-8) 5vw;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Sidebar Navigation */
+  .sidebar-nav {
+    background: var(--blue-100);
+    padding: var(--space-6);
+    height: fit-content;
+  }
+
+  .sidebar-nav h3 {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+  }
+
+  .sidebar-nav ul {
+    list-style: none;
+  }
+
+  .sidebar-nav ul li {
+    margin-bottom: 0;
+  }
+
+  .sidebar-nav ul li a {
+    font-size: 14px;
+    color: var(--gray-700);
+    text-decoration: none;
+    padding: var(--space-3) var(--space-4);
+    display: block;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+    background: var(--white);
+    margin-bottom: var(--space-2);
+  }
+
+  .sidebar-nav ul li a:hover {
+    color: var(--blue-500);
+    background: var(--white);
+  }
+
+  .sidebar-nav ul li a.active {
+    color: var(--blue-900);
+    border-left-color: var(--blue-500);
+    font-weight: 600;
+    background: var(--white);
+  }
+
+  /* Breadcrumbs */
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--gray-700);
+    margin-bottom: var(--space-5);
+  }
+
+  .breadcrumbs a {
+    color: var(--gray-700);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--blue-500);
+  }
+
+  /* Content Area */
+  .content-area {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-area h2 {
+    font-family: var(--display);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+    line-height: 1.2;
+  }
+
+  .content-area h3 {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-3);
+    margin-top: var(--space-6);
+  }
+
+  .content-area p {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .content-area a {
+    color: var(--blue-500);
+    text-decoration: none;
+  }
+
+  .content-area a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-visual {
+      display: none;
+    }
+    .main-layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+    .sidebar-nav {
+      display: none;
+    }
+    .nav-links {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-logo">AerogenPharma</div>
+  <ul class="nav-links">
+    <li><a href="#">Our Company</a></li>
+    <li><a href="#">Our Technology</a></li>
+    <li><a href="#">Pipeline</a></li>
+    <li><a href="#">Partnerships</a></li>
+    <li><a href="#">Understanding RDS</a></li>
+    <li><a href="#">Newsroom</a></li>
+    <li><a href="#">Culture & Careers</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Contact Us</a>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+      <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+    <div class="hero-visual">[Image placeholder]</div>
+  </div>
+</section>
+
+<!-- Main Content Section with Sidebar -->
+<section class="main-layout">
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar-nav">
+    <h3>Our Company</h3>
+    <ul>
+      <li><a href="aerogen-our-company-who-we-are.html">Who We Are</a></li>
+      <li><a href="aerogen-our-company-mission.html" class="active">Mission</a></li>
+      <li><a href="aerogen-our-company-our-team.html">Our Team</a></li>
+      <li><a href="aerogen-our-company-company-highlights.html">Company Highlights</a></li>
+      <li><a href="aerogen-our-company-locations.html">Locations</a></li>
+      <li><a href="aerogen-our-company-our-heritage.html">Our Heritage</a></li>
+    </ul>
+  </aside>
+
+  <!-- Content Area -->
+  <div class="content-area">
+    <div class="breadcrumbs">
+      <a href="#">Our Company</a> / Mission
+    </div>
+
+    <h2>Mission</h2>
+
+    <p>At Aerogen Pharma, our mission is to advance innovative inhaled therapies that improve the lives of preterm infants and the clinicians who care for them.</p>
+
+    <p>Preterm infants are among the most vulnerable patients in healthcare, requiring specialized respiratory support during the earliest and most critical stages of life. We are committed to developing therapies tailored to their unique needs rather than adapting treatments created for other patient populations.</p>
+
+    <p>By combining pharmaceutical innovation with advanced aerosol delivery technology, we aim to deliver medicines directly to the lungs with greater precision and efficiency. Our goal is to support clinicians with targeted therapies that reduce treatment burden and improve outcomes for preterm infants worldwide.</p>
+
+    <p>Everything we do is guided by a commitment to advancing neonatal care and helping the world's smallest patients achieve the healthiest possible start in life.</p>
+  </div>
+</section>
+
+</body>
+</html>

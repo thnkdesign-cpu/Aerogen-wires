@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Heritage — Our Company — Aerogen Pharma</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-900: #0B1F3A;
+    --blue-700: #1F3A52;
+    --blue-500: #3D5A7A;
+    --blue-300: #8FA9C2;
+    --blue-100: #E8EFF5;
+    --gray-900: #1a1a1a;
+    --gray-700: #4a4a4a;
+    --gray-500: #767676;
+    --white: #fff;
+
+    --display: 'Space Grotesk', sans-serif;
+    --sans: 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--gray-900);
+    line-height: 1.6;
+  }
+
+  sup {
+    font-size: 0.75em;
+    vertical-align: super;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-5) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-logo {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--space-6);
+    list-style: none;
+    font-size: 13px;
+  }
+
+  .nav-links a {
+    color: var(--gray-700);
+    text-decoration: none;
+  }
+
+  .nav-cta {
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--gray-500);
+    background: transparent;
+    color: var(--gray-900);
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .hero {
+    padding: var(--space-8) 5vw;
+    background: var(--white);
+    border-bottom: 1px solid var(--blue-100);
+  }
+
+  .hero-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: stretch;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+  }
+
+  .hero p {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-visual {
+    min-height: 400px;
+    background: var(--blue-100);
+    border: 1px solid var(--blue-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-500);
+    font-size: 13px;
+    font-family: var(--mono);
+  }
+
+  .main-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-8);
+    padding: var(--space-8) 5vw;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .sidebar-nav {
+    background: var(--blue-100);
+    padding: var(--space-6);
+    height: fit-content;
+  }
+
+  .sidebar-nav h3 {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+  }
+
+  .sidebar-nav ul {
+    list-style: none;
+  }
+
+  .sidebar-nav ul li {
+    margin-bottom: 0;
+  }
+
+  .sidebar-nav ul li a {
+    font-size: 14px;
+    color: var(--gray-700);
+    text-decoration: none;
+    padding: var(--space-3) var(--space-4);
+    display: block;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+    background: var(--white);
+    margin-bottom: var(--space-2);
+  }
+
+  .sidebar-nav ul li a:hover {
+    color: var(--blue-500);
+    background: var(--white);
+  }
+
+  .sidebar-nav ul li a.active {
+    color: var(--blue-900);
+    border-left-color: var(--blue-500);
+    font-weight: 600;
+    background: var(--white);
+  }
+
+  .breadcrumbs {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--gray-700);
+    margin-bottom: var(--space-5);
+  }
+
+  .breadcrumbs a {
+    color: var(--gray-700);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--blue-500);
+  }
+
+  .content-area {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-area h2 {
+    font-family: var(--display);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-5);
+    line-height: 1.2;
+  }
+
+  .content-area p {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .content-area a {
+    color: var(--blue-500);
+    text-decoration: none;
+  }
+
+  .content-area a:hover {
+    text-decoration: underline;
+  }
+
+  .cta-link {
+    display: inline-block;
+    margin-top: var(--space-5);
+    padding: var(--space-3) var(--space-6);
+    background: var(--blue-500);
+    color: var(--white) !important;
+    text-decoration: none !important;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid var(--blue-500);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    align-self: flex-start;
+  }
+
+  .cta-link:hover {
+    background: var(--blue-700);
+    border-color: var(--blue-700);
+    color: var(--white) !important;
+  }
+
+  .reference-list {
+    font-size: 12px;
+    color: var(--gray-700);
+    line-height: 1.8;
+    margin-top: var(--space-6);
+  }
+
+  .reference-item {
+    margin-bottom: var(--space-3);
+    padding-left: var(--space-4);
+    text-indent: calc(var(--space-4) * -1);
+  }
+
+  .reference-item a {
+    color: var(--blue-500);
+    text-decoration: none;
+  }
+
+  .reference-item a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-visual {
+      display: none;
+    }
+    .main-layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+    .sidebar-nav {
+      display: none;
+    }
+    .nav-links {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">AerogenPharma</div>
+  <ul class="nav-links">
+    <li><a href="#">Our Company</a></li>
+    <li><a href="#">Our Technology</a></li>
+    <li><a href="#">Pipeline</a></li>
+    <li><a href="#">Partnerships</a></li>
+    <li><a href="#">Understanding RDS</a></li>
+    <li><a href="#">Newsroom</a></li>
+    <li><a href="#">Culture & Careers</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Contact Us</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+      <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+    <div class="hero-visual">[Image placeholder]</div>
+  </div>
+</section>
+
+<section class="main-layout">
+  <aside class="sidebar-nav">
+    <h3>Our Company</h3>
+    <ul>
+      <li><a href="aerogen-our-company-who-we-are.html">Who We Are</a></li>
+      <li><a href="aerogen-our-company-mission.html">Mission</a></li>
+      <li><a href="aerogen-our-company-our-team.html">Our Team</a></li>
+      <li><a href="aerogen-our-company-company-highlights.html">Company Highlights</a></li>
+      <li><a href="aerogen-our-company-locations.html">Locations</a></li>
+      <li><a href="aerogen-our-company-our-heritage.html" class="active">Our Heritage</a></li>
+    </ul>
+  </aside>
+
+  <div class="content-area">
+    <div class="breadcrumbs">
+      <a href="#">Our Company</a> / Our Heritage
+    </div>
+
+    <h2>Our Heritage — The Aerogen Connection</h2>
+
+    <p>Aerogen Pharma was founded to build on the aerosol drug delivery and respiratory care expertise established by <a href="https://www.aerogen.com/">Aerogen</a> Ltd., including the clinical use of vibrating mesh nebulizer technology in acute, critical care, and neonatal respiratory support settings.<sup>1-4</sup></p>
+
+    <p>For more than 25 years, Aerogen Ltd. has helped transform respiratory care through innovations that have supported the treatment of over 30 million patients across 80 countries worldwide. Headquartered in Galway, Ireland, Aerogen Ltd. is recognized as the world leader in acute care aerosol drug delivery, with a portfolio supported by more than 300 international patents and an extensive body of peer-reviewed clinical research.</p>
+
+    <p>At the center of this success is Aerogen Ltd.'s pioneering vibrating mesh technology, which has been evaluated across hospitals globally. From emergency departments and neonatal intensive care units to critical care environments, Aerogen Ltd. technology has enabled efficient aerosol delivery for millions of patients while helping clinicians improve respiratory outcomes.<sup>4,5</sup></p>
+
+    <p>This legacy of scientific rigor, engineering excellence, and clinical collaboration created the foundation from which Aerogen Pharma was established.</p>
+
+    <p>Today, Aerogen Pharma is building upon that heritage by combining aerosol science with targeted pharmaceutical development. Aerogen Pharma is focused on advancing investigational drug-device combination therapies designed to address critical unmet needs in neonatal respiratory medicine, where prematurity and respiratory distress syndrome remain major contributors to neonatal morbidity and mortality.<sup>6-9</sup></p>
+
+    <p>Our work is centered on developing therapies for preterm infants facing serious respiratory disease — some of the smallest and most vulnerable patients in healthcare.<sup>6-11</sup> By leveraging experience in aerosol delivery, respiratory care, and clinical development, we are positioned to create therapies intended to improve outcomes for infants and families worldwide.<sup>3,8-11</sup></p>
+
+    <p>Our heritage provides more than a technological advantage. It reflects a commitment to innovation, evidence-based development, and patient-focused outcomes. Guided by this legacy, we are working to advance the future of neonatal respiratory care and help bring new treatment possibilities to the patients who need them most.<sup>6-11</sup></p>
+
+    <a href="https://www.aerogen.com/" class="cta-link">Learn More About Aerogen</a>
+
+    <div class="reference-list">
+      <h3 style="margin-top: var(--space-8); margin-bottom: var(--space-4); font-size: 18px;">References</h3>
+      <div class="reference-item">1. Li J, Liu K, Lyu S, et al. <a href="https://www.frontiersin.org/journals/pediatrics/articles/10.3389/fped.2022.923010/full">Aerosol therapy in adult critically ill patients: a consensus statement regarding aerosol administration strategies during various modes of respiratory support</a>. Ann Intensive Care. 2023;13(1):63. doi:<a href="https://doi.org/10.1186/s13613-023-01147-4">10.1186/s13613-023-01147-4</a></div>
+      <div class="reference-item">2. Dugernier J, Le Pennec D, Maerckx G, et al. Inhaled drug delivery: a randomized study in intubated patients with healthy lungs. Ann Intensive Care. 2023;13(1):125. doi:<a href="https://doi.org/10.1186/s13613-023-01220-y">10.1186/s13613-023-01220-y</a></div>
+      <div class="reference-item">3. Ari A, Rubin BK, Fink JB. Mesh nebulizers enabling transnasal pulmonary delivery of medical aerosols to infants and toddlers: roles, challenges, and opportunities. Front Drug Deliv. 2022;2:995489. doi:<a href="https://doi.org/10.3389/fddev.2022.995489">10.3389/fddev.2022.995489</a></div>
+      <div class="reference-item">4. Zhou JF, Zhang YB, Zhang ZW. Comparison of clinical outcomes following delivery of budesonide by both vibrating mesh nebulizer and jet nebulizer in premature infants with bronchopulmonary dysplasia. Front Pediatr. 2023;11:1258846. doi:<a href="https://doi.org/10.3389/fped.2023.1258846">10.3389/fped.2023.1258846</a></div>
+      <div class="reference-item">5. Chweich H, Idrees N, Rideout J, Barnewolt B, Rice L, Hill NS. Randomized controlled trial assessing a vibrating mesh nebulizer compared to a jet nebulizer in severe asthma exacerbations. Respir Care. 2024;69(3):345-348. doi:<a href="https://doi.org/10.4187/respcare.10980">10.4187/respcare.10980</a></div>
+      <div class="reference-item">6. Ekhaguere OA, Okonkwo IR, Batra M, Hedstrom AB. <a href="https://www.frontiersin.org/journals/pediatrics/articles/10.3389/fped.2022.961509/full">Respiratory distress syndrome management in resource limited settings: current evidence and opportunities in 2022</a>. Front Pediatr. 2022;10:961509. doi:<a href="https://doi.org/10.3389/fped.2022.961509">10.3389/fped.2022.961509</a></div>
+      <div class="reference-item">7. Sweet DG, Carnielli VP, Greisen G, et al. European consensus guidelines on the management of respiratory distress syndrome: 2022 update. Neonatology. 2023;120(1):3-23. doi:<a href="https://doi.org/10.1159/000528914">10.1159/000528914</a></div>
+      <div class="reference-item">8. Walther FJ, Waring AJ. <a href="https://www.frontiersin.org/journals/pediatrics/articles/10.3389/fped.2022.923010/full">Aerosol delivery of lung surfactant and nasal CPAP in the treatment of neonatal respiratory distress syndrome</a>. Front Pediatr. 2022;10:923010. doi:<a href="https://doi.org/10.3389/fped.2022.923010">10.3389/fped.2022.923010</a></div>
+      <div class="reference-item">9. Rao S, Edmond K, Bahl R. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10984592/">Target product profile: aerosolized surfactant for neonatal respiratory distress</a>. Bull World Health Organ. 2023;101(5):341-345. doi:<a href="https://doi.org/10.2471/BLT.23.289727">10.2471/BLT.23.289727</a></div>
+      <div class="reference-item">10. Jiang Y, Chen X, Li R, et al. Vibrating mesh nebulizers vs. less invasive surfactant administration in the treatment of preterm respiratory distress syndrome: a multicenter, open-label, exploratory, randomized clinical trial. Eur J Med Res. 2025;30(1):1048. doi:<a href="https://doi.org/10.1186/s40001-025-03316-6">10.1186/s40001-025-03316-6</a></div>
+      <div class="reference-item">11. Jardine L, Lui K, Liley HG, et al. <a href="https://fn.bmj.com/content/107/1/51">Trial of aerosolised surfactant for preterm infants with respiratory distress syndrome</a>. Arch Dis Child Fetal Neonatal Ed. 2022;107(1):51-55. doi:<a href="https://doi.org/10.1136/archdischild-2021-321645">10.1136/archdischild-2021-321645</a></div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
